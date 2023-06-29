@@ -24,10 +24,13 @@ data <- stack(list(A = A, B = B))
 data <- na.omit(data)
 
 
-ggplot(don, aes(y=E, x=Concentration,colour=Concentration,fill=Concentration))+
+bp <- ggplot(data, aes(y=values, x=ind,colour=ind,fill=ind))+
   geom_boxplot(alpha=0.5, outlier.alpha=0)+
   geom_jitter(width=0.25)+
   theme_classic()
+
+bp + scale_fill_manual(values = c("#00AFBB", "#E7B800", "#FC4E07")) + 
+  scale_color_manual(values = c("#00AFBB", "#E7B800", "#FC4E07"))
 
 
 
