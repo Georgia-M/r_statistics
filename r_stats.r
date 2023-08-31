@@ -12,7 +12,7 @@ data <- data.frame(x=unlist(data))
 st <- boxplot.stats(data$A)
 st
 out_index <- which(data %in% st$out)
-A <- data$A[!(data$A %in% out_index)]
+A <- data$A[!(data$A %in% st$out)]
 
 
 st <- boxplot.stats(data$B)
